@@ -23,3 +23,4 @@ Estrutura do Projeto
  ┣ 📜 schemas.py     # Schemas para validação (Pydantic)
  ┣ 📜 database.py    # Conexão com o banco de dados
  ┗ 📜 requirements.txt
+<img width="1414" height="636" alt="image" src="https://github.com/user-attachments/assets/c82d26f7-edbf-4455-a294-0cca4c48f1c4" />
