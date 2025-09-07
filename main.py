@@ -43,5 +43,5 @@ def delete_user(user_id: int, db: Session = Depends(get_db)):
     if not user:
         raise HTTPException(status_code=404, detail="Usuário não encontrado")
     db.delete(user)
-    db.commit
+    db.commit()
     return{"mensagem": "Usuário deletado com sucesso"}
