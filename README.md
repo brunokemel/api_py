@@ -43,6 +43,12 @@ Esta é uma API REST simples desenvolvida com FastAPI, SQLAlchemy e SQLite, que 
    - Swagger UI: http://127.0.0.1:8000/docs
    - ReDoc: http://127.0.0.1:8000/redoc
 
+## 📸 Interface da API
+
+<img width="1414" height="636" alt="image" src="https://github.com/user-attachments/assets/c82d26f7-edbf-4455-a294-0cca4c48f1c4" />
+
+**Acesse a documentação interativa:** @http://127.0.0.1:8000/docs
+
 ## 📋 Endpoints da API
 
 ### Criar Usuário
