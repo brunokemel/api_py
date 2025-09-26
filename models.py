@@ -5,5 +5,5 @@ class User(Base):
     __tablename__ = "users"
 
     id = Column(Integer, primary_key=True, index=True)
-    nome = Column(String, index=True)
-    email = Column(String, unique=True, index=True)
+    nome = Column(String(100), index=True)
+    email = Column(String(100), unique=True, index=True)

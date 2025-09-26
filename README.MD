@@ -1,6 +1,6 @@
 # API de Usuários - FastAPI
 
-Esta é uma API REST simples desenvolvida com FastAPI, SQLAlchemy e SQLite, que permite gerenciar usuários com operações CRUD básicas.
+Esta é uma API REST simples desenvolvida com FastAPI, SQLAlchemy e MySQL, que permite gerenciar usuários com operações CRUD básicas.
 
 ## 🚀 Tecnologias
 
@@ -8,7 +8,7 @@ Esta é uma API REST simples desenvolvida com FastAPI, SQLAlchemy e SQLite, que 
 - **Uvicorn** - Servidor ASGI para execução da aplicação
 - **SQLAlchemy** - ORM para interação com banco de dados
 - **Pydantic** - Validação e serialização de dados
-- **SQLite** - Banco de dados leve e embarcado
+- **MySQL** - Sistema de gerenciamento de banco de dados relacional
 
 ## 📁 Estrutura do Projeto
 
@@ -18,7 +18,7 @@ Esta é uma API REST simples desenvolvida com FastAPI, SQLAlchemy e SQLite, que 
 ├── 📜 models.py         # Modelos do banco de dados (SQLAlchemy)
 ├── 📜 database.py       # Configuração e conexão com o banco de dados
 ├── 📜 requirements.txt  # Dependências do projeto
-├── 📜 users.db          # Banco de dados SQLite (gerado automaticamente)
+├── 📜 credenciais.env   # Arquivo de variáveis de ambiente (credenciais do banco)
 └── 📜 README.md         # Documentação do projeto
 ```
 
@@ -27,19 +27,29 @@ Esta é uma API REST simples desenvolvida com FastAPI, SQLAlchemy e SQLite, que 
 ### Pré-requisitos
 - Python 3.7+
 - pip (gerenciador de pacotes do Python)
+- MySQL Server instalado e configurado
 
 ### Passos para instalação
 
 1. **Clone o repositório** (se aplicável)
-2. **Instale as dependências:**
+2. **Configure o banco MySQL:**
+   - Crie um banco de dados chamado `cadastro_db` (ou conforme configurado)
+   - Crie o arquivo `credenciais.env` com as seguintes variáveis:
+     ```
+     DB_USER=seu_usuario
+     DB_PASSWORD=sua_senha
+     DB_HOST=localhost
+     DB_NAME=cadastro_db
+     ```
+3. **Instale as dependências:**
    ```bash
    pip install -r requirements.txt
    ```
-3. **Execute a aplicação:**
+4. **Execute a aplicação:**
    ```bash
    uvicorn main:app --reload
    ```
-4. **Acesse a documentação interativa:**
+5. **Acesse a documentação interativa:**
    - Swagger UI: http://127.0.0.1:8000/docs
    - ReDoc: http://127.0.0.1:8000/redoc
 
@@ -82,12 +92,13 @@ Esta é uma API REST simples desenvolvida com FastAPI, SQLAlchemy e SQLite, que 
 - ✅ Listagem de usuários
 - ✅ Exclusão de usuários
 - ✅ Validação de dados com Pydantic
-- ✅ Banco de dados SQLite persistente
+- ✅ Banco de dados MySQL persistente
 - ✅ Documentação automática com Swagger
 
 ## 📝 Notas
 
-- O banco de dados SQLite (`users.db`) é criado automaticamente na primeira execução
+- O banco de dados MySQL (`cadastro_db`) deve ser criado manualmente antes da execução
+- Configure as credenciais de conexão no arquivo `credenciais.env`
 - A API inclui validação automática de dados de entrada
 - Documentação interativa disponível em `/docs` e `/redoc`
 
